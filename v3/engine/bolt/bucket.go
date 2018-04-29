@@ -34,6 +34,7 @@ func newBucket(bb *bolt.Bucket) (*bucket, error) {
 		schema: schema,
 	}
 
+	b.buff.Schema = schema
 	b.k, b.v = b.cur.First()
 	return &b, nil
 }
@@ -69,7 +70,7 @@ func (b *bucket) Next() (engine.Record, error) {
 
 		curid = id
 
-		f := b.schema.Fields[string(fld)]
+		f := b.schema.Get(string(fld))
 		b.buff.Add(&engine.Field{Name: f.Name, Type: f.Type, Data: b.v})
 
 		b.k, b.v = b.cur.Next()

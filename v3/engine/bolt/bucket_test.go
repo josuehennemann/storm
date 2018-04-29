@@ -21,17 +21,9 @@ func TestBucket(t *testing.T) {
 	for i := 0; i < 10; i++ {
 		buff.Reset()
 
-		buff.Add(&engine.Field{
-			Name:  "Name",
-			Type:  engine.StringField,
-			Value: fmt.Sprintf("Name %d", i),
-		})
+		buff.AddString("Name", fmt.Sprintf("Name %d", i))
 
-		buff.Add(&engine.Field{
-			Name:  "Age",
-			Type:  engine.Int64Field,
-			Value: int64(i),
-		})
+		buff.AddInt64("Age", int64(i))
 
 		_, err = tx.Insert(&buff, "a")
 		require.NoError(t, err)

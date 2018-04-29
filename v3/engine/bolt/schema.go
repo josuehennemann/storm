@@ -44,9 +44,7 @@ func (s *schemaBucket) Set(f *engine.Field) error {
 }
 
 func (s *schemaBucket) Schema() (*engine.Schema, error) {
-	schema := engine.Schema{
-		Fields: make(map[string]*engine.Field),
-	}
+	var schema engine.Schema
 
 	err := s.b.ForEach(func(k, v []byte) error {
 		if len(v) == 0 {
@@ -54,10 +52,7 @@ func (s *schemaBucket) Schema() (*engine.Schema, error) {
 		}
 
 		name := string(k)
-		schema.Fields[name] = &engine.Field{
-			Name: name,
-			Type: engine.FieldType(v[0]),
-		}
+		schema.Set(name, engine.FieldType(v[0]))
 
 		return nil
 	})

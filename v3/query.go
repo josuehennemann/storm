@@ -33,12 +33,7 @@ func selectt(e engine.Engine, pl engine.Pipeline, path ...string) (engine.Bucket
 
 func limit(l int) engine.Pipe {
 	return func(b engine.Bucket) (engine.Bucket, error) {
-		schema, err := b.Schema()
-		if err != nil {
-			return nil, err
-		}
-
-		buff := engine.NewRecordBuffer(schema)
+		var buff engine.RecordBuffer
 
 		for i := 0; i < l; i++ {
 			r, err := b.Next()
@@ -53,7 +48,7 @@ func limit(l int) engine.Pipe {
 			buff.Add(r)
 		}
 
-		return buff, nil
+		return &buff, nil
 	}
 }
 
@@ -68,8 +63,8 @@ func maxInt64(field string) engine.Pipe {
 
 		var scanner engine.RecordScanner
 
-		f, ok := schema.Fields[field]
-		if !ok {
+		f := schema.Get(field)
+		if f == nil {
 			return nil, errors.New("field not found")
 		}
 
@@ -98,27 +93,17 @@ func maxInt64(field string) engine.Pipe {
 			}
 		}
 
-		newField := "max(" + field + ")"
-
-		// ugly
-		buff := engine.NewRecordBuffer(&engine.Schema{
-			Fields: map[string]*engine.Field{
-				newField: &engine.Field{
-					Name: newField,
-					Type: engine.Int64Field,
-				}},
-		})
+		mf := "max(" + field + ")"
 
 		var fb engine.FieldBuffer
+		err = fb.AddInt64(mf, max)
+		if err != nil {
+			return nil, err
+		}
 
-		fb.Add(&engine.Field{
-			Name:  newField,
-			Type:  engine.Int64Field,
-			Value: max,
-		})
-
+		var buff engine.RecordBuffer
 		buff.Add(&fb)
 
-		return buff, nil
+		return &buff, nil
 	}
 }
