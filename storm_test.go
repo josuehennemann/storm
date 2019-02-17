@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/asdine/storm/codec/json"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/codec/json"
+	bolt "github.com/josuehennemann/bbolt"
 	"github.com/stretchr/testify/require"
 )
 

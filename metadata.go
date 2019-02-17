@@ -3,7 +3,7 @@ package storm
 import (
 	"reflect"
 
-	bolt "go.etcd.io/bbolt"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 const (

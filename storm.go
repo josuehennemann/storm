@@ -5,9 +5,9 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/asdine/storm/codec"
-	"github.com/asdine/storm/codec/json"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/codec"
+	"github.com/josuehennemann/storm/codec/json"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 const (

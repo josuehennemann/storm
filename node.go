@@ -1,8 +1,8 @@
 package storm
 
 import (
-	"github.com/asdine/storm/codec"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/codec"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // A Node in Storm represents the API to a BoltDB bucket.

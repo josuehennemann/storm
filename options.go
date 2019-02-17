@@ -3,9 +3,9 @@ package storm
 import (
 	"os"
 
-	"github.com/asdine/storm/codec"
-	"github.com/asdine/storm/index"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/codec"
+	"github.com/josuehennemann/storm/index"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // BoltOptions used to pass options to BoltDB.

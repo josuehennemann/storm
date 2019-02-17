@@ -1,9 +1,9 @@
 package storm
 
 import (
-	"github.com/asdine/storm/internal"
-	"github.com/asdine/storm/q"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/internal"
+	"github.com/josuehennemann/storm/q"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // Select a list of records that match a list of matchers. Doesn't use indexes.

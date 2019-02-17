@@ -3,8 +3,8 @@ package index
 import (
 	"bytes"
 
-	"github.com/asdine/storm/internal"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/internal"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // NewUniqueIndex loads a UniqueIndex

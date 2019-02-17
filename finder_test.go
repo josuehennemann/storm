@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	bolt "go.etcd.io/bbolt"
+	bolt "github.com/josuehennemann/bbolt"
 	"github.com/stretchr/testify/require"
 )
 

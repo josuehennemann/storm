@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/asdine/storm"
-	"github.com/asdine/storm/codec/gob"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm"
+	"github.com/josuehennemann/storm/codec/gob"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 func ExampleDB_Save() {

@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/asdine/storm/index"
-	"github.com/asdine/storm/q"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/index"
+	"github.com/josuehennemann/storm/q"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 type item struct {

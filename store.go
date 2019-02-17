@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"reflect"
 
-	"github.com/asdine/storm/index"
-	"github.com/asdine/storm/q"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/index"
+	"github.com/josuehennemann/storm/q"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // TypeStore stores user defined types in BoltDB.

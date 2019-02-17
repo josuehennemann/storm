@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/asdine/storm/index"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm/index"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 // Storm tags

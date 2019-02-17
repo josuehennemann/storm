@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/asdine/storm/codec/gob"
-	"github.com/asdine/storm/codec/json"
-	"github.com/asdine/storm/q"
+	"github.com/josuehennemann/storm/codec/gob"
+	"github.com/josuehennemann/storm/codec/json"
+	"github.com/josuehennemann/storm/q"
 	"github.com/stretchr/testify/require"
-	bolt "go.etcd.io/bbolt"
+	bolt "github.com/josuehennemann/bbolt"
 )
 
 func TestInit(t *testing.T) {

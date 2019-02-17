@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/asdine/storm"
-	"github.com/asdine/storm/codec/gob"
-	"github.com/asdine/storm/index"
-	bolt "go.etcd.io/bbolt"
+	"github.com/josuehennemann/storm"
+	"github.com/josuehennemann/storm/codec/gob"
+	"github.com/josuehennemann/storm/index"
+	bolt "github.com/josuehennemann/bbolt"
 	"github.com/stretchr/testify/require"
 )
 
